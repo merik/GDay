@@ -8,24 +8,77 @@
 
 /* Begin PBXBuildFile section */
 		0387773F20B83B7E00300ECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387773E20B83B7E00300ECE /* AppDelegate.swift */; };
-		0387774120B83B7E00300ECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387774020B83B7E00300ECE /* ViewController.swift */; };
+		0387774120B83B7E00300ECE /* RecognizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387774020B83B7E00300ECE /* RecognizeVC.swift */; };
 		0387774420B83B7E00300ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0387774220B83B7E00300ECE /* Main.storyboard */; };
 		0387774620B83B7F00300ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0387774520B83B7F00300ECE /* Assets.xcassets */; };
 		0387774920B83B7F00300ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0387774720B83B7F00300ECE /* LaunchScreen.storyboard */; };
+		0387775120B8401900300ECE /* KairosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387775020B8401900300ECE /* KairosAPI.swift */; };
+		0387775620B840C500300ECE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387775520B840C500300ECE /* Response.swift */; };
+		0387775820B840E500300ECE /* Enrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387775720B840E500300ECE /* Enrol.swift */; };
+		0387775B20B843EB00300ECE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387775A20B843EB00300ECE /* User.swift */; };
+		0387775F20B8DB5600300ECE /* NameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387775D20B8DB5600300ECE /* NameDialog.swift */; };
+		0387776020B8DB5600300ECE /* NameDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0387775E20B8DB5600300ECE /* NameDialog.xib */; };
+		0387776320B8DC7100300ECE /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387776220B8DC7100300ECE /* DashboardVC.swift */; };
+		0387776520B8DC8200300ECE /* EnrolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387776420B8DC8200300ECE /* EnrolVC.swift */; };
+		0387776D20BA1B8900300ECE /* GDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387776C20BA1B8900300ECE /* GDayTests.swift */; };
+		0387777520BA259100300ECE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387777420BA259100300ECE /* Result.swift */; };
+		0387777920BA28A500300ECE /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387777720BA28A500300ECE /* ResultCell.swift */; };
+		0387777A20BA28A500300ECE /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0387777820BA28A500300ECE /* ResultCell.xib */; };
+		0387777C20BA2B2000300ECE /* ResultCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387777B20BA2B2000300ECE /* ResultCollectionView.swift */; };
+		0387778020BA8A6F00300ECE /* EnrolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387777E20BA8A6F00300ECE /* EnrolCell.swift */; };
+		0387778120BA8A6F00300ECE /* EnrolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0387777F20BA8A6F00300ECE /* EnrolCell.xib */; };
+		0387778320BA8B8400300ECE /* EnrolCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387778220BA8B8400300ECE /* EnrolCollectionView.swift */; };
+		0387778520BA8BA900300ECE /* Enrollment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387778420BA8BA900300ECE /* Enrollment.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0387776F20BA1B8900300ECE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0387773320B83B7E00300ECE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0387773A20B83B7E00300ECE;
+			remoteInfo = GDay;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0387773B20B83B7E00300ECE /* GDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0387773E20B83B7E00300ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0387774020B83B7E00300ECE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0387774020B83B7E00300ECE /* RecognizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeVC.swift; sourceTree = "<group>"; };
 		0387774320B83B7E00300ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0387774520B83B7F00300ECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0387774820B83B7F00300ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0387774A20B83B7F00300ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0387775020B8401900300ECE /* KairosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairosAPI.swift; sourceTree = "<group>"; };
+		0387775520B840C500300ECE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		0387775720B840E500300ECE /* Enrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enrol.swift; sourceTree = "<group>"; };
+		0387775A20B843EB00300ECE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0387775D20B8DB5600300ECE /* NameDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDialog.swift; sourceTree = "<group>"; };
+		0387775E20B8DB5600300ECE /* NameDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameDialog.xib; sourceTree = "<group>"; };
+		0387776220B8DC7100300ECE /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		0387776420B8DC8200300ECE /* EnrolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolVC.swift; sourceTree = "<group>"; };
+		0387776A20BA1B8900300ECE /* GDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0387776C20BA1B8900300ECE /* GDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDayTests.swift; sourceTree = "<group>"; };
+		0387776E20BA1B8900300ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0387777420BA259100300ECE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0387777720BA28A500300ECE /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		0387777820BA28A500300ECE /* ResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
+		0387777B20BA2B2000300ECE /* ResultCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionView.swift; sourceTree = "<group>"; };
+		0387777E20BA8A6F00300ECE /* EnrolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolCell.swift; sourceTree = "<group>"; };
+		0387777F20BA8A6F00300ECE /* EnrolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnrolCell.xib; sourceTree = "<group>"; };
+		0387778220BA8B8400300ECE /* EnrolCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolCollectionView.swift; sourceTree = "<group>"; };
+		0387778420BA8BA900300ECE /* Enrollment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enrollment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0387773820B83B7E00300ECE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0387776720BA1B8900300ECE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0387773D20B83B7E00300ECE /* GDay */,
+				0387776B20BA1B8900300ECE /* GDayTests */,
 				0387773C20B83B7E00300ECE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				0387773B20B83B7E00300ECE /* GDay.app */,
+				0387776A20BA1B8900300ECE /* GDayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +109,87 @@
 		0387773D20B83B7E00300ECE /* GDay */ = {
 			isa = PBXGroup;
 			children = (
+				0387777620BA288500300ECE /* Views */,
+				0387776120B8DC5300300ECE /* Controllers */,
+				0387775C20B8DB3000300ECE /* Dialogs */,
+				0387775920B843CB00300ECE /* Models */,
+				0387775220B8404A00300ECE /* Kairos */,
 				0387773E20B83B7E00300ECE /* AppDelegate.swift */,
-				0387774020B83B7E00300ECE /* ViewController.swift */,
 				0387774220B83B7E00300ECE /* Main.storyboard */,
 				0387774520B83B7F00300ECE /* Assets.xcassets */,
 				0387774720B83B7F00300ECE /* LaunchScreen.storyboard */,
 				0387774A20B83B7F00300ECE /* Info.plist */,
 			);
 			path = GDay;
+			sourceTree = "<group>";
+		};
+		0387775220B8404A00300ECE /* Kairos */ = {
+			isa = PBXGroup;
+			children = (
+				0387775020B8401900300ECE /* KairosAPI.swift */,
+				0387775520B840C500300ECE /* Response.swift */,
+				0387775720B840E500300ECE /* Enrol.swift */,
+			);
+			path = Kairos;
+			sourceTree = "<group>";
+		};
+		0387775920B843CB00300ECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0387775A20B843EB00300ECE /* User.swift */,
+				0387777420BA259100300ECE /* Result.swift */,
+				0387778420BA8BA900300ECE /* Enrollment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0387775C20B8DB3000300ECE /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				0387775D20B8DB5600300ECE /* NameDialog.swift */,
+				0387775E20B8DB5600300ECE /* NameDialog.xib */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		0387776120B8DC5300300ECE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0387776220B8DC7100300ECE /* DashboardVC.swift */,
+				0387776420B8DC8200300ECE /* EnrolVC.swift */,
+				0387774020B83B7E00300ECE /* RecognizeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0387776B20BA1B8900300ECE /* GDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				0387776C20BA1B8900300ECE /* GDayTests.swift */,
+				0387776E20BA1B8900300ECE /* Info.plist */,
+			);
+			path = GDayTests;
+			sourceTree = "<group>";
+		};
+		0387777620BA288500300ECE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0387777D20BA8A5200300ECE /* EnrolCollectionView */,
+				0387777720BA28A500300ECE /* ResultCell.swift */,
+				0387777820BA28A500300ECE /* ResultCell.xib */,
+				0387777B20BA2B2000300ECE /* ResultCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0387777D20BA8A5200300ECE /* EnrolCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0387777E20BA8A6F00300ECE /* EnrolCell.swift */,
+				0387777F20BA8A6F00300ECE /* EnrolCell.xib */,
+				0387778220BA8B8400300ECE /* EnrolCollectionView.swift */,
+			);
+			path = EnrolCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +212,24 @@
 			productReference = 0387773B20B83B7E00300ECE /* GDay.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0387776920BA1B8900300ECE /* GDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0387777120BA1B8900300ECE /* Build configuration list for PBXNativeTarget "GDayTests" */;
+			buildPhases = (
+				0387776620BA1B8900300ECE /* Sources */,
+				0387776720BA1B8900300ECE /* Frameworks */,
+				0387776820BA1B8900300ECE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0387777020BA1B8900300ECE /* PBXTargetDependency */,
+			);
+			name = GDayTests;
+			productName = GDayTests;
+			productReference = 0387776A20BA1B8900300ECE /* GDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +242,10 @@
 				TargetAttributes = {
 					0387773A20B83B7E00300ECE = {
 						CreatedOnToolsVersion = 9.3.1;
+					};
+					0387776920BA1B8900300ECE = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 0387773A20B83B7E00300ECE;
 					};
 				};
 			};
@@ -113,6 +263,7 @@
 			projectRoot = "";
 			targets = (
 				0387773A20B83B7E00300ECE /* GDay */,
+				0387776920BA1B8900300ECE /* GDayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -122,9 +273,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0387778120BA8A6F00300ECE /* EnrolCell.xib in Resources */,
+				0387776020B8DB5600300ECE /* NameDialog.xib in Resources */,
 				0387774920B83B7F00300ECE /* LaunchScreen.storyboard in Resources */,
 				0387774620B83B7F00300ECE /* Assets.xcassets in Resources */,
 				0387774420B83B7E00300ECE /* Main.storyboard in Resources */,
+				0387777A20BA28A500300ECE /* ResultCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0387776820BA1B8900300ECE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,12 +296,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0387774120B83B7E00300ECE /* ViewController.swift in Sources */,
+				0387775820B840E500300ECE /* Enrol.swift in Sources */,
+				0387774120B83B7E00300ECE /* RecognizeVC.swift in Sources */,
+				0387775B20B843EB00300ECE /* User.swift in Sources */,
+				0387778520BA8BA900300ECE /* Enrollment.swift in Sources */,
+				0387778320BA8B8400300ECE /* EnrolCollectionView.swift in Sources */,
+				0387775120B8401900300ECE /* KairosAPI.swift in Sources */,
+				0387777920BA28A500300ECE /* ResultCell.swift in Sources */,
+				0387775F20B8DB5600300ECE /* NameDialog.swift in Sources */,
+				0387776520B8DC8200300ECE /* EnrolVC.swift in Sources */,
+				0387777C20BA2B2000300ECE /* ResultCollectionView.swift in Sources */,
+				0387777520BA259100300ECE /* Result.swift in Sources */,
+				0387776320B8DC7100300ECE /* DashboardVC.swift in Sources */,
 				0387773F20B83B7E00300ECE /* AppDelegate.swift in Sources */,
+				0387775620B840C500300ECE /* Response.swift in Sources */,
+				0387778020BA8A6F00300ECE /* EnrolCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0387776620BA1B8900300ECE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0387776D20BA1B8900300ECE /* GDayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0387777020BA1B8900300ECE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0387773A20B83B7E00300ECE /* GDay */;
+			targetProxy = 0387776F20BA1B8900300ECE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0387774220B83B7E00300ECE /* Main.storyboard */ = {
@@ -213,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -267,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -312,6 +502,46 @@
 			};
 			name = Release;
 		};
+		0387777220BA1B8900300ECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YR2CB2Z854;
+				INFOPLIST_FILE = GDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmc.GDayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDay.app/GDay";
+			};
+			name = Debug;
+		};
+		0387777320BA1B8900300ECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YR2CB2Z854;
+				INFOPLIST_FILE = GDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmc.GDayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDay.app/GDay";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +559,15 @@
 			buildConfigurations = (
 				0387774E20B83B7F00300ECE /* Debug */,
 				0387774F20B83B7F00300ECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0387777120BA1B8900300ECE /* Build configuration list for PBXNativeTarget "GDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0387777220BA1B8900300ECE /* Debug */,
+				0387777320BA1B8900300ECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
