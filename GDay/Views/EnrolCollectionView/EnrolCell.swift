@@ -16,7 +16,7 @@ class EnrolCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func setEnrol(enrol: Enrollment) {
+    func setEnrol(enrol: Enrolment) {
         imageView.image = enrol.image
         enrolResult.text = enrol.message
     }

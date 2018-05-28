@@ -11,12 +11,19 @@ import UIKit
 import AVFoundation
 class EnrolVC: UIViewController {
 
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var toggleCameraImageView: UIImageView!
     @IBOutlet weak var bottomDistance: NSLayoutConstraint!
     @IBOutlet weak var enrolCollectionView: EnrolCollectionView!
+    @IBOutlet weak var takePicImageView: UIImageView!
+    @IBOutlet weak var cameraView: UIView!
+    
     var stillImageOutput = AVCaptureStillImageOutput()
     var session: AVCaptureSession?
     var stillOutput = AVCaptureStillImageOutput()
+    var autoEnrolment = false
+    
     
     fileprivate var videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
     lazy var previewLayer: AVCaptureVideoPreviewLayer? = {
@@ -40,24 +47,14 @@ class EnrolVC: UIViewController {
         return devices.filter { $0.position == .back }.first
     }()
     
-    @IBOutlet weak var takePicImageView: UIImageView!
-    @IBOutlet weak var enrolButton: UIButton!
-    @IBOutlet weak var enrolView: UIView!
-    
-    //@IBOutlet var picImageViews: [UIImageView]!
-    @IBOutlet weak var nameLabel: UITextField!
-    
-    @IBOutlet weak var cameraView: UIView!
     let numImagesToTrain = 3
     var useFrontCamera = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        enrolView.isHidden = true
-        enrolButton.isEnabled = false
-        
-        
+        hideMessage()
         let tap = UITapGestureRecognizer(target: self, action: #selector(EnrolVC.didTapOnTakePhoto))
         takePicImageView.isUserInteractionEnabled = true
         takePicImageView.addGestureRecognizer(tap)
@@ -78,7 +75,7 @@ class EnrolVC: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(EnrolVC.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(EnrolVC.keyboardWillBeHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+        enrolCollectionView.enrolCollectionViewDelegate = self
     }
     @objc func keyboardDidShow(_ notification: Notification) {
         let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -106,23 +103,12 @@ class EnrolVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapOnEnrol(_ sender: Any) {
-        guard let name = nameLabel.text, !name.isEmpty else {
-            return
-        }
-        
-        enrolButton.isEnabled = false
-        takePicImageView.isUserInteractionEnabled = false
-        enrolButton.setTitle("Enrolling...", for: .normal)
-        nameLabel.resignFirstResponder()
-        enrolImages(name: name)
-        
-    }
+    
     @IBAction func didTapOnX(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
     @objc func didTapOnTakePhoto() {
-        takePhoto()
+        takePicture()
     }
     @objc func toggleCamera() {
         useFrontCamera = !useFrontCamera
@@ -131,70 +117,61 @@ class EnrolVC: UIViewController {
         
     }
     @objc func didTapOnCameraView() {
-        nameLabel.resignFirstResponder()
-    }
-    func enrolImages(name: String) {
-        if let unSubmittedEnrol = enrolCollectionView.nextUnsubmittedEnrol {
-            doEnrol(unSubmittedEnrol, name: name)
-        } else {
-            finishEnrol()
-        }
-    }
-    func doEnrol(_ enrol: Enrollment, name: String) {
-        let image = enrol.image
-        KairosAPI.sharedInstance.enrol(image, subjectId: name) { [unowned self] result in
-            switch result {
-            case .success(let analyzis):
-                self.doneEnrol(enrol, name: name)
-            //self.setUIForResponse(.analyzed(analyzis))
-            case .error(let error):
-                print(error)
-                self.enrolError(enrol, name: name, error: error)
-                //self.setUIForResponse(.error(error))
-            }
-        }
-    }
-    func enrolError(_ enrol: Enrollment, name: String, error: String) {
-        enrol.errorSubmitting(message: error)
-        enrolCollectionView.updateEnrol(enrol)
-        enrolImages(name: name)
+        
     }
     
-    func doneEnrol(_ enrol: Enrollment, name: String) {
-        enrol.submitted(name: name)
-        enrolCollectionView.updateEnrol(enrol)
-        enrolImages(name: name)
+    func showMessage(_ message: String) {
+        messageLabel.text = message
+        messageView.isHidden = false
     }
-    func finishEnrol() {
-        enrolReady(false)
-        takePicImageView.isUserInteractionEnabled = true
+    func hideMessage() {
+        messageView.isHidden = true
     }
-
-    func takePhoto() {
-        
+    func takePicture() {
+        hideMessage()
         if let videoConnection = stillImageOutput.connection(with: AVMediaType.video) {
             
             stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (CMSampleBuffer, Error) in
                 if let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(CMSampleBuffer!) {
                     
                     if let cameraImage = UIImage(data: imageData) {
-                        let newEnrol = self.enrolCollectionView.makeNewEnrol()
-                        newEnrol.newImage(image: cameraImage)
-                        self.enrolCollectionView.addNewResult(newEnrol)
-                        self.enrolReady(true)
-                  }
+                        self.newImageTaken(image: cameraImage)
+//                        let newEnrol = self.enrolCollectionView.makeNewEnrol()
+//                        newEnrol.newImage(image: cameraImage)
+//                        self.enrolCollectionView.addNewResult(newEnrol)
+//                        self.enrolReady(true)
+                    } else {
+                        self.showMessage("Error taking picture")
+                    }
                 }
             })
         }
     }
-    func enrolReady(_ ready: Bool) {
-        if ready {
-            enrolView.isHidden = false
-            enrolButton.isEnabled = true
-            enrolButton.setTitle("Enrol", for: .normal)
-        } else {
-            enrolView.isHidden = true
-            enrolButton.isEnabled = false
+    func newImageTaken(image: UIImage) {
+        let imageCropper = FaceCropper(image: image)
+        imageCropper.crop { (result) in
+            switch result {
+            case .failure(let error):
+                self.showMessage("Error decting faces")
+                print(error)
+            case .notFound:
+                self.showMessage("No faces found")
+                print("not found")
+            case .success(let images):
+                for image in images {
+                    let newEnrol = self.enrolCollectionView.makeNewEnrol()
+                    newEnrol.newWith(image: image.image!)
+                    self.enrolCollectionView.addNewResult(newEnrol)
+                }
+                if images.count == 0 {
+                    self.showMessage("No faces found")
+                } else {
+                    self.startAutoEnroling()
+                }
+                
+            }
+            
+            
         }
     }
     
@@ -249,7 +226,59 @@ class EnrolVC: UIViewController {
             print("error with creating AVCaptureDeviceInput")
         }
     }
-
+    func doEnrol(_ enrolment: Enrolment) {
+        if enrolment.notSubmitted {
+            let vc = NameDialog(nibName: "NameDialog", bundle: nil)
+            vc.enrol = enrolment
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            
+            vc.delegate = self
+            
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    func enrolNext() {
+        if let enrolment = enrolCollectionView.nextUnsubmittedEnrol {
+            doEnrol(enrolment)
+        } else {
+            endEnroling()
+        }
+    }
+    func stopCamera() {
+        previewLayer?.connection?.isEnabled = false
+        //session?.stopRunning()
+    }
+    func resumeCamera() {
+        previewLayer?.connection?.isEnabled = true
+        //session?.startRunning()
+    }
+    func endEnroling() {
+        autoEnrolment = false
+        resumeCamera()
+    }
+    func startAutoEnroling() {
+        autoEnrolment = true
+        stopCamera()
+        enrolNext()
+    }
+}
+extension EnrolVC: EnrolCollectionViewDelegate, NameDialogDelegate {
+    func enrolCollectionView(_ collectionView: EnrolCollectionView, didSelect enrolment: Enrolment, at: IndexPath) {
+        autoEnrolment = false
+        doEnrol(enrolment)
+    }
+    func nameDialog(didCancel dialog: NameDialog) {
+        endEnroling()
+    }
+    func nameDialog(_ dialog: NameDialog, didEnrol: Enrolment) {
+        enrolCollectionView.updateEnrol(didEnrol)
+        if autoEnrolment {
+            enrolNext()
+        } else {
+            endEnroling()
+        }
+    }
 }
 
 

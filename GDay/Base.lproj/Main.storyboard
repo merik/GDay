@@ -88,7 +88,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90L-NC-aVO">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83g-7p-Jwy">
+                                <rect key="frame" x="0.0" y="537" width="375" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3a-lb-MuO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AjJ-mk-7tl"/>
+                                    <constraint firstAttribute="bottom" secondItem="t3a-lb-MuO" secondAttribute="bottom" id="Jmn-r1-gN5"/>
+                                    <constraint firstAttribute="trailing" secondItem="t3a-lb-MuO" secondAttribute="trailing" id="SGx-vS-oXa"/>
+                                    <constraint firstItem="t3a-lb-MuO" firstAttribute="top" secondItem="83g-7p-Jwy" secondAttribute="top" id="VjC-2Y-WqR"/>
+                                    <constraint firstItem="t3a-lb-MuO" firstAttribute="leading" secondItem="83g-7p-Jwy" secondAttribute="leading" id="hww-Ad-frx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90L-NC-aVO" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-yo-VjL" customClass="EnrolCollectionView" customModule="GDay" customModuleProvider="target">
@@ -157,64 +176,28 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takephoto" translatesAutoresizingMaskIntoConstraints="NO" id="yOG-pM-3LB">
-                                <rect key="frame" x="157.5" y="317" width="60" height="60"/>
+                                <rect key="frame" x="147.5" y="457" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="IJk-Gg-TRu"/>
-                                    <constraint firstAttribute="width" constant="60" id="yAK-NZ-2NJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="IJk-Gg-TRu"/>
+                                    <constraint firstAttribute="width" constant="80" id="yAK-NZ-2NJ"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYV-NK-Rtd">
-                                <rect key="frame" x="0.0" y="527" width="375" height="40"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-nk-uBj">
-                                        <rect key="frame" x="1" y="1" width="229" height="38"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzm-zs-hPc">
-                                        <rect key="frame" x="230" y="0.0" width="145" height="40"/>
-                                        <color key="backgroundColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="145" id="ZNe-zh-4K5"/>
-                                        </constraints>
-                                        <state key="normal" title="Enrol">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapOnEnrol:" destination="blq-JD-1Ce" eventType="touchUpInside" id="VT6-LQ-ud9"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="16y-xq-v5A"/>
-                                    <constraint firstItem="Jzm-zs-hPc" firstAttribute="top" secondItem="MYV-NK-Rtd" secondAttribute="top" id="2hO-2x-BSD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jzm-zs-hPc" secondAttribute="bottom" id="7dM-Sd-rAq"/>
-                                    <constraint firstItem="Jzm-zs-hPc" firstAttribute="leading" secondItem="dnz-nk-uBj" secondAttribute="trailing" id="DTv-Ux-q87"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jzm-zs-hPc" secondAttribute="trailing" id="Wyj-CO-HzY"/>
-                                    <constraint firstItem="dnz-nk-uBj" firstAttribute="leading" secondItem="MYV-NK-Rtd" secondAttribute="leading" constant="1" id="oC9-kf-uTV"/>
-                                    <constraint firstItem="dnz-nk-uBj" firstAttribute="top" secondItem="MYV-NK-Rtd" secondAttribute="top" constant="1" id="oqY-Bc-3UX"/>
-                                    <constraint firstAttribute="bottom" secondItem="dnz-nk-uBj" secondAttribute="bottom" constant="1" id="zcc-4p-M5E"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="90L-NC-aVO" firstAttribute="leading" secondItem="jK9-HL-hky" secondAttribute="leading" id="4C7-QY-944"/>
-                            <constraint firstItem="90L-NC-aVO" firstAttribute="top" secondItem="MYV-NK-Rtd" secondAttribute="bottom" id="80k-gZ-SRs"/>
                             <constraint firstItem="yOG-pM-3LB" firstAttribute="centerX" secondItem="jK9-HL-hky" secondAttribute="centerX" id="Jie-ah-SuH"/>
-                            <constraint firstItem="MYV-NK-Rtd" firstAttribute="leading" secondItem="bgb-vU-9ZX" secondAttribute="leading" id="KoN-lv-tKp"/>
+                            <constraint firstItem="83g-7p-Jwy" firstAttribute="trailing" secondItem="bgb-vU-9ZX" secondAttribute="trailing" id="LWf-bO-Xvj"/>
+                            <constraint firstItem="83g-7p-Jwy" firstAttribute="leading" secondItem="bgb-vU-9ZX" secondAttribute="leading" id="MLW-7X-3EC"/>
                             <constraint firstAttribute="bottom" secondItem="90L-NC-aVO" secondAttribute="bottom" id="Nhl-dS-8gR"/>
-                            <constraint firstItem="MYV-NK-Rtd" firstAttribute="top" secondItem="yOG-pM-3LB" secondAttribute="bottom" constant="150" id="S4h-dz-uae"/>
                             <constraint firstItem="XrA-Kk-8MV" firstAttribute="leading" secondItem="bgb-vU-9ZX" secondAttribute="leading" id="UKg-0x-ngr"/>
                             <constraint firstItem="bgb-vU-9ZX" firstAttribute="trailing" secondItem="wxp-3H-4Tw" secondAttribute="trailing" id="UUN-uO-DlG"/>
                             <constraint firstItem="90L-NC-aVO" firstAttribute="trailing" secondItem="bgb-vU-9ZX" secondAttribute="trailing" id="XAR-rE-MTh"/>
+                            <constraint firstItem="90L-NC-aVO" firstAttribute="top" secondItem="83g-7p-Jwy" secondAttribute="bottom" id="bAc-fB-A3f"/>
                             <constraint firstItem="XrA-Kk-8MV" firstAttribute="top" secondItem="jK9-HL-hky" secondAttribute="top" id="bhf-ix-c24"/>
                             <constraint firstItem="XrA-Kk-8MV" firstAttribute="bottom" secondItem="bgb-vU-9ZX" secondAttribute="bottom" id="ddp-aN-kzh"/>
                             <constraint firstItem="bgb-vU-9ZX" firstAttribute="trailing" secondItem="XrA-Kk-8MV" secondAttribute="trailing" id="ejy-YH-gj5"/>
-                            <constraint firstItem="bgb-vU-9ZX" firstAttribute="trailing" secondItem="MYV-NK-Rtd" secondAttribute="trailing" id="pPS-hO-HWD"/>
+                            <constraint firstItem="90L-NC-aVO" firstAttribute="top" secondItem="yOG-pM-3LB" secondAttribute="bottom" constant="30" id="lnw-td-kRh"/>
                             <constraint firstItem="wxp-3H-4Tw" firstAttribute="top" secondItem="bgb-vU-9ZX" secondAttribute="top" id="r8K-km-l3F"/>
                             <constraint firstItem="wxp-3H-4Tw" firstAttribute="leading" secondItem="bgb-vU-9ZX" secondAttribute="leading" id="ror-CT-Gvf"/>
                         </constraints>
@@ -223,10 +206,9 @@
                     <connections>
                         <outlet property="bottomDistance" destination="Nhl-dS-8gR" id="vdz-B1-7yf"/>
                         <outlet property="cameraView" destination="XrA-Kk-8MV" id="Sym-IT-Zjq"/>
-                        <outlet property="enrolButton" destination="Jzm-zs-hPc" id="kGY-F5-lu4"/>
                         <outlet property="enrolCollectionView" destination="gOf-yo-VjL" id="goZ-Jp-Q1S"/>
-                        <outlet property="enrolView" destination="MYV-NK-Rtd" id="Eao-Ub-hRt"/>
-                        <outlet property="nameLabel" destination="dnz-nk-uBj" id="JWf-lw-XSb"/>
+                        <outlet property="messageLabel" destination="t3a-lb-MuO" id="Mih-gj-VW0"/>
+                        <outlet property="messageView" destination="83g-7p-Jwy" id="1FA-GS-VYa"/>
                         <outlet property="takePicImageView" destination="yOG-pM-3LB" id="ZyR-4d-kxN"/>
                         <outlet property="toggleCameraImageView" destination="MET-0E-U7G" id="UyT-TX-gtC"/>
                     </connections>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0309111920BB989C0095FA6F /* FaceCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309111820BB989B0095FA6F /* FaceCropper.swift */; };
+		0309111C20BBAD2A0095FA6F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309111B20BBAD2A0095FA6F /* Extensions.swift */; };
 		0387773F20B83B7E00300ECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387773E20B83B7E00300ECE /* AppDelegate.swift */; };
 		0387774120B83B7E00300ECE /* RecognizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387774020B83B7E00300ECE /* RecognizeVC.swift */; };
 		0387774420B83B7E00300ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0387774220B83B7E00300ECE /* Main.storyboard */; };
@@ -28,7 +30,7 @@
 		0387778020BA8A6F00300ECE /* EnrolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387777E20BA8A6F00300ECE /* EnrolCell.swift */; };
 		0387778120BA8A6F00300ECE /* EnrolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0387777F20BA8A6F00300ECE /* EnrolCell.xib */; };
 		0387778320BA8B8400300ECE /* EnrolCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387778220BA8B8400300ECE /* EnrolCollectionView.swift */; };
-		0387778520BA8BA900300ECE /* Enrollment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387778420BA8BA900300ECE /* Enrollment.swift */; };
+		0387778520BA8BA900300ECE /* Enrolment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387778420BA8BA900300ECE /* Enrolment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0309111820BB989B0095FA6F /* FaceCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCropper.swift; sourceTree = "<group>"; };
+		0309111B20BBAD2A0095FA6F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0387773B20B83B7E00300ECE /* GDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0387773E20B83B7E00300ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0387774020B83B7E00300ECE /* RecognizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeVC.swift; sourceTree = "<group>"; };
@@ -67,7 +71,7 @@
 		0387777E20BA8A6F00300ECE /* EnrolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolCell.swift; sourceTree = "<group>"; };
 		0387777F20BA8A6F00300ECE /* EnrolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnrolCell.xib; sourceTree = "<group>"; };
 		0387778220BA8B8400300ECE /* EnrolCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolCollectionView.swift; sourceTree = "<group>"; };
-		0387778420BA8BA900300ECE /* Enrollment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enrollment.swift; sourceTree = "<group>"; };
+		0387778420BA8BA900300ECE /* Enrolment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enrolment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0309111A20BBAD140095FA6F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0309111B20BBAD2A0095FA6F /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0387773220B83B7E00300ECE = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 		0387773D20B83B7E00300ECE /* GDay */ = {
 			isa = PBXGroup;
 			children = (
+				0309111A20BBAD140095FA6F /* Helpers */,
 				0387777620BA288500300ECE /* Views */,
 				0387776120B8DC5300300ECE /* Controllers */,
 				0387775C20B8DB3000300ECE /* Dialogs */,
@@ -138,7 +151,8 @@
 			children = (
 				0387775A20B843EB00300ECE /* User.swift */,
 				0387777420BA259100300ECE /* Result.swift */,
-				0387778420BA8BA900300ECE /* Enrollment.swift */,
+				0387778420BA8BA900300ECE /* Enrolment.swift */,
+				0309111820BB989B0095FA6F /* FaceCropper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,9 +313,10 @@
 				0387775820B840E500300ECE /* Enrol.swift in Sources */,
 				0387774120B83B7E00300ECE /* RecognizeVC.swift in Sources */,
 				0387775B20B843EB00300ECE /* User.swift in Sources */,
-				0387778520BA8BA900300ECE /* Enrollment.swift in Sources */,
+				0387778520BA8BA900300ECE /* Enrolment.swift in Sources */,
 				0387778320BA8B8400300ECE /* EnrolCollectionView.swift in Sources */,
 				0387775120B8401900300ECE /* KairosAPI.swift in Sources */,
+				0309111920BB989C0095FA6F /* FaceCropper.swift in Sources */,
 				0387777920BA28A500300ECE /* ResultCell.swift in Sources */,
 				0387775F20B8DB5600300ECE /* NameDialog.swift in Sources */,
 				0387776520B8DC8200300ECE /* EnrolVC.swift in Sources */,
@@ -309,6 +324,7 @@
 				0387777520BA259100300ECE /* Result.swift in Sources */,
 				0387776320B8DC7100300ECE /* DashboardVC.swift in Sources */,
 				0387773F20B83B7E00300ECE /* AppDelegate.swift in Sources */,
+				0309111C20BBAD2A0095FA6F /* Extensions.swift in Sources */,
 				0387775620B840C500300ECE /* Response.swift in Sources */,
 				0387778020BA8A6F00300ECE /* EnrolCell.swift in Sources */,
 			);

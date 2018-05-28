@@ -8,30 +8,37 @@
 
 import UIKit
 
+protocol EnrolCollectionViewDelegate: class {
+    func enrolCollectionView(_ collectionView: EnrolCollectionView, didSelect enrolment: Enrolment, at: IndexPath)
+}
+
 class EnrolCollectionView: UICollectionView {
 
     private let cellName = "EnrolCell"
     private let cellSize = CGSize(width: 120, height: 100)
     
-    func makeNewEnrol() -> Enrollment {
+    weak var enrolCollectionViewDelegate: EnrolCollectionViewDelegate?
+    
+    
+    func makeNewEnrol() -> Enrolment {
         let id = enrols.count
-        let enrol = Enrollment(id: id)
+        let enrol = Enrolment(id: id)
         return enrol
     }
-    var nextUnsubmittedEnrol: Enrollment? {
+    var nextUnsubmittedEnrol: Enrolment? {
         for enrol in enrols {
-            if enrol.unSubmitted {
+            if enrol.notSubmitted {
                 return enrol
             }
         }
         return nil
     }
-    var enrols: [Enrollment] = [Enrollment]() {
+    var enrols: [Enrolment] = [Enrolment]() {
         didSet {
             reloadData()
         }
     }
-    func updateEnrol(_ enrol: Enrollment) {
+    func updateEnrol(_ enrol: Enrolment) {
         var elementIndex = -1
         for (index, enr) in enrols.enumerated() {
             if enr.id == enrol.id {
@@ -45,7 +52,7 @@ class EnrolCollectionView: UICollectionView {
             self.reloadItems(at: [indexPath])
         }
     }
-    func addNewResult(_ result: Enrollment) {
+    func addNewResult(_ result: Enrolment) {
         enrols.append(result)
     }
     func configLayout() {
@@ -72,7 +79,10 @@ class EnrolCollectionView: UICollectionView {
 
 }
 extension EnrolCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = enrols[indexPath.item]
+        enrolCollectionViewDelegate?.enrolCollectionView(self, didSelect: item, at: indexPath)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return enrols.count
     }
